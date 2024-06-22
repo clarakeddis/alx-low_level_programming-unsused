@@ -17,7 +17,7 @@ for (num = 0; num <= 9; num++)
 		putchar(','); /* Print comma */
 		putchar(' '); /* Print space */
 		}
-	{
+	}
 	putchar('\n'); /* Print newline */
 
 return (0);
