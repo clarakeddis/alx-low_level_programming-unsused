@@ -7,22 +7,23 @@
  *
  * Return: A pointer to the resulting string dest.
  */
-char *_strcat(char *dest, const char *src)
+char *_strcat(char *dest, char *src)
 {
-char *ptr = dest;
-/* Move the pointer to the end of dest string */
-while (*ptr != '\0')
+char *d = dest;
+char *s = src;
+/* Find the end of dest string */
+while (*d != '\0')
 {
-ptr++;
+d++;
 }
 /* Append src to dest */
-while (*src != '\0')
+while (*s != '\0')
 {
-*ptr = *src;
-ptr++;
-src++;
+*d = *s;
+d++;
+s++;
 }
 /* Add the terminating null byte */
-*ptr = '\0';
+*d = '\0';
 return (dest);
 }
