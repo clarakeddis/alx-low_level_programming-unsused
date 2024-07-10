@@ -2,20 +2,18 @@
  * _sqrt_recursion - Computes the natural square root of a number recursively
  * @n: The number to find the square root of
  *
- * Return: The natural square root of n, or -1 if n does not have a natural square root
+ * Return: The natural square root of n
  */
 int _sqrt_recursion(int n)
 {
-    /* Base case: if n is less than 0, return -1 (no natural square root) */
-    if (n < 0)
-        return -1;
-    
-    /* Base case: if n is 0 or 1, return n (square root is itself) */
-    if (n == 0 || n == 1)
-        return n;
-    
-    /* Recursive case: Find the square root using binary search */
-    return _sqrt_helper(n, 1, n);
+/* Base case: if n is less than 0, return -1 (no natural square root) */
+if (n < 0)
+return (-1);
+/* Base case: if n is 0 or 1, return n (square root is itself) */
+if (n == 0 || n == 1)
+return (n);
+/* Recursive case: Find the square root using binary search */
+return (_sqrt_helper(n, 1, n));
 }
 
 /**
