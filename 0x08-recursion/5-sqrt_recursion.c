@@ -1,42 +1,33 @@
+#include "main.h"
+
+int actual_sqrt_recursion(int n, int i);
+
 /**
- * _sqrt_recursion - Computes the natural square root of a number recursively
- * @n: The number to find the square root of
+ * _sqrt_recursion - returns the natural square root of a number
+ * @n: number to calculate the square root of
  *
- * Return: The natural square root of n
+ * Return: the resulting square root
  */
 int _sqrt_recursion(int n)
 {
-/* Base case: if n is less than 0, return -1 (no natural square root) */
-if (n < 0)
-return (-1);
-/* Base case: if n is 0 or 1, return n (square root is itself) */
-if (n == 0 || n == 1)
-return (n);
-/* Recursive case: Find the square root using binary search */
-return (_sqrt_helper(n, 1, n));
+	if (n < 0)
+		return (-1);
+	return (actual_sqrt_recursion(n, 0));
 }
 
 /**
- * _sqrt_helper - Helper function to find the square root using binary search
- * @n: The number to find the square root of
- * @start: The starting point for the search
- * @end: The ending point for the search
+ * actual_sqrt_recursion - recurses to find the natural
+ * square root of a number
+ * @n: number to calculate the sqaure root of
+ * @i: iterator
  *
- * Return: The natural square root of n
+ * Return: the resulting square root
  */
-int _sqrt_helper(int n, int start, int end)
+int actual_sqrt_recursion(int n, int i)
 {
-/* Base case: if start meets or exceeds end, return -1 */
-if (start > end)
-return (-1);
-int mid = (start + end) / 2;
-int mid_squared = mid * mid;
-/* Base case: if mid_squared is equal to n, mid is the square root */
-if (mid_squared == n)
-return (mid);
-/* Recursive cases based on the comparison of mid_squared and n */
-if (mid_squared > n)
-return (_sqrt_helper(n, start, mid - 1));
-else
-return (_sqrt_helper(n, mid + 1, end));
+	if (i * i > n)
+		return (-1);
+	if (i * i == n)
+		return (i);
+	return (actual_sqrt_recursion(n, i + 1));
 }
